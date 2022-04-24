@@ -1,0 +1,40 @@
+<html>
+  <body>
+    <canvas id="folha" width="600" height="500"> </canvas>
+
+    <script>
+      var folhaDesenho = document.getElementById('folha')
+      var areaDesenho = folhaDesenho.getContext('2d')
+
+      var larguraCampo = 600
+      var alturaCampo = 500
+      var larguraLinha = 5
+      var larguraBola = 5
+      var alturaBola = 5
+      var alturaRaquete = 50
+
+      //Campo
+      areaDesenho.fillStyle = '#000066'
+      areaDesenho.fillRect(0, 0, larguraCampo, alturaCampo)
+      //Linha do meio
+      areaDesenho.fillStyle = '#cc3300'
+      areaDesenho.fillRect(
+        larguraCampo / 2 - larguraLinha / 2,
+        0,
+        larguraLinha,
+        alturaCampo
+      )
+      //Raquete 1
+      areaDesenho.fillRect(0, 230, larguraLinha, alturaRaquete)
+      //Raquete 2
+      areaDesenho.fillRect(
+        larguraCampo - larguraLinha,
+        230,
+        larguraLinha,
+        alturaRaquete
+      )
+      //Bola
+      areaDesenho.fillRect(95, 95, larguraBola, alturaBola)
+    </script>
+  </body>
+</html>

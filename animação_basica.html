@@ -1,0 +1,47 @@
+<html>
+  <body>
+    <canvas id="folha" width="600" height="500"></canvas>
+
+    <script>
+      //Este modelo de Codigo serve de exemplo para um movimento ERRONEO
+      //Pois deixa Rastros e não atualiza em mS
+      var folhaDesenho = document.getElementById('folha')
+      var areaDesenho = folhaDesenho.getContext('2d')
+
+      var larguraCampo = 600
+      var alturaCampo = 500
+      var espessuraRede = 5
+
+      var posicaoBolaX = (posicaoBolaY = 10)
+      var diametroBola = 10
+      //Desenho do Campo
+      areaDesenho.fillStyle = '#000066' //cor primaria
+      areaDesenho.fillRect(0, 0, larguraCampo, alturaCampo)
+
+      areaDesenho.fillStyle = '#cc3300' //cor secundaria
+      areaDesenho.fillRect(
+        larguraCampo / 2 - espessuraRede / 2,
+        0,
+        espessuraRede,
+        alturaCampo
+      )
+
+      var contador = 0
+
+      while (contador < 50) {
+        //Desenha a bola
+        areaDesenho.fillRect(
+          posicaoBolaX - diametroBola / 2,
+          posicaoBolaY - diametroBola / 2,
+          diametroBola,
+          diametroBola
+        )
+
+        posicaoBolaX = posicaoBolaX + 1
+        posicaoBolaY = posicaoBolaY + 1
+        contador = contador + 1
+      }
+      var contador = 0
+    </script>
+  </body>
+</html>
